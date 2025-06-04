@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>早筛早治房颤，筑牢卒中防线 - 2025中国房颤日</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #c00;
+            text-align: center;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 15px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        .highlight {
+            background-color: #fff9db;
+            border-left: 4px solid #ffd43b;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #ffebee;
+            border: 1px solid #e53935;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .steps {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .step-number {
+            display: inline-block;
+            background: #2980b9;
+            color: white;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .cta-button {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            background: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin: 30px auto;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            background: #c0392b;
+        }
+        .quote {
+            font-style: italic;
+            border-left: 3px solid #2980b9;
+            padding-left: 15px;
+            margin: 25px 0;
+            color: #555;
+        }
+        .stat {
+            font-weight: bold;
+            color: #c00;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 14px;
+        }
+        .ecg-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6H4v12h16V6zm-2 10H6V8h12v8zm-3-6H9v2h6v-2zm0 4H9v2h6v-2z" fill="%232980b9"/></svg>');
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .campaign-title {
+            text-align: center;
+            color: #c00;
+            font-size: 26px;
+            font-weight: bold;
+            margin: 25px 0 15px;
+        }
+        .action-points {
+            margin: 25px 0;
+        }
+        .action-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .action-item:before {
+            content: "•";
+            color: #e74c3c;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        .action-item h3 {
+            color: #2980b9;
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .action-item p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .action-item strong {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .hospital-info {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .hospital-info h3 {
+            color: #2980b9;
+            margin-top: 0;
+            text-align: center;
+        }
+        .hospital-info p {
+            font-size: 16px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .contact-info {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .risk-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: none; /* 默认隐藏 */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2980b9;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        .checkbox-group {
+            margin: 10px 0;
+        }
+        .bmi-result {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .calculate-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .calculate-btn:hover {
+            background: #c0392b;
+        }
+        small {
+            display: block;
+            margin-top: 5px;
+            color: #777;
+        }
+        .risk-result {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none; /* 默认隐藏 */
+        }
+        .risk-level {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .risk-low {
+            color: #27ae60;
+        }
+        .risk-medium {
+            color: #f39c12;
+        }
+        .risk-high {
+            color: #e74c3c;
+        }
+        .recommendation {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .campaign-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>警惕"沉默的杀手"：房颤不治，卒中逼近！</h1>
+        
+        <p>您是否曾莫名心慌、气短，甚至头晕乏力？这些看似普通的症状，可能是心脏发出的求救信号——<strong>心房颤动（房颤）</strong>，一种极易被忽视却会引爆脑卒中的"隐形炸弹"！</p>
+        
+        <div class="warning-box">
+            <h2>房颤：心跳乱了，卒中风险飙升<span class="stat">5倍</span>！</h2>
+            <p>健康的心脏规律跳动，像钟表般精准。而房颤时，心脏（尤其是心房）每分钟颤抖可达350-600次，血液无法有效泵出，部分滞留心房形成漩涡。<strong>可怕的是</strong>：</p>
+            <ul>
+                <li>漩涡中会凝结<strong>血栓</strong>，一旦脱落，随血流冲进脑动脉，立即堵塞血管 → <strong>引发缺血性脑卒中</strong>；</li>
+                <li>房颤导致的卒中更凶险：<span class="stat">致死率高达50%</span>，幸存者中<span class="stat">75%永久残疾</span>（偏瘫、失语）！</li>
+            </ul>
+            <p><span class="stat">冰冷数据：我国每5个脑卒中患者，就有1个祸起房颤！</span></p>
+        </div>
+        
+        <div class="highlight">
+            <h2>沉默的房颤：近半数患者毫无症状！</h2>
+            <p>许多人认为"没症状=没风险"，这是<strong>致命误区</strong>！</p>
+            <ul>
+                <li>约<span class="stat">25%-40%的房颤患者无症状</span>，尤其常见于老年人；</li>
+                <li><strong>无症状≠无伤害</strong>：血栓仍在悄然形成，首次发病可能就是卒中！</li>
+            </ul>
+            <p><strong>真实案例：</strong>68岁张先生体检发现房颤时已并发脑梗，他懊悔道："从来只觉得累，哪想到心跳会要命！"</p>
+        </div>
+        
+        <div class="steps">
+            <h2>早筛早治：三步阻断"房颤→卒中"链条！</h2>
+            
+            <h3><span class="step-number">1</span> 摸脉搏：30秒初步自测</h3>
+            <p>将食指中指按在手腕桡动脉处，感受1分钟：</p>
+            <ul>
+                <li>❌ <strong>异常信号</strong>：跳动忽快忽慢、强弱不等（如"哒-哒-哒--哒哒"乱序）；</li>
+                <li>✅ <strong>正常脉搏</strong>：节奏均匀，60-100次/分钟。</li>
+            </ul>
+            <p><em>发现异常？立即就医做心电图！</em></p>
+            
+            <h3><span class="step-number">2</span> 精准筛查：揪出"隐匿性房颤"</h3>
+            <ul>
+                <li><strong>高危人群</strong>（65岁以上、高血压/糖尿病患者）<strong>每年查一次心电图</strong>；</li>
+                <li><strong>智能设备辅助</strong>：便携心电仪、智能手环可捕捉阵发性房颤（筛查准确率＞90%）。</li>
+            </ul>
+            
+            <h3><span class="step-number">3</span> 科学干预：卒中风险直降<span class="stat">70%</span>！</h3>
+            <ul>
+                <li>💊 <strong>抗凝治疗是核心</strong>：新型口服抗凝药（如利伐沙班）大幅降低出血风险，需<strong>严格遵医嘱服用</strong>；</li>
+                <li>⚡ <strong>根治希望</strong>：射频消融术微创治疗阵发性房颤，成功率超90%，从此告别心悸；</li>
+                <li><span class="ecg-icon"></span> <strong>门诊随诊</strong>：定期复查动态心电图、心脏彩超，及时掌握心脏状况。</li>
+            </ul>
+        </div>
+        
+        <!-- 关键行动部分 -->
+        <div class="campaign-title">漳州市医院公益筛查启动！</div>
+        
+        <div class="action-points">
+            <!-- 点1：免费心电图筛查 -->
+            <div class="action-item">
+                <h3>1. 免费心电图筛查</h3>
+                <p><strong>无需预约</strong>，凭<strong>身份证</strong>即可进行<strong>30秒快速检测</strong>，当场获取<strong>专业报告</strong>。</p>
+            </div>
+            
+            <!-- 点2：专家直通服务 -->
+            <div class="action-item">
+                <h3>2. 专家直通服务</h3>
+                <p><strong>心内科专家</strong>坐诊，筛查异常者可享受<strong>绿色通道</strong>，优先安排<strong>专家咨询</strong>与<strong>诊疗方案</strong>制定。</p>
+            </div>
+            
+            <!-- 点3：扫码自测评估 -->
+            <div class="action-item">
+                <h3>3. 扫码自测评估</h3>
+                <p>点击下方按钮，进入<strong>专业房颤风险评估系统</strong>，仅需<strong>2分钟</strong>填写健康信息，即可获取<strong>个性化风险报告</strong>与<strong>健康建议</strong>。</p>
+            </div>
+        </div>
+        
+        <!-- 医院信息 -->
+        <div class="hospital-info">
+            <h3>漳州市医院总部心血管内二科</h3>
+            <p class="contact-info">预约电话：0596-6853441</p>
+            <p>地址：漳州市医院总部院区第二住院楼14楼</p>
+        </div>
+        
+        <!-- 风险评估按钮 -->
+        <button class="cta-button" onclick="showRiskAssessment()">立即进行房颤风险评估</button>
+        
+        <!-- 风险评估表单 -->
+        <div id="risk-form" class="risk-form">
+            <h3 style="text-align:center; margin-top:0; color:#2980b9;">房颤风险评估</h3>
+            
+            <div class="form-group">
+                <label for="age">年龄（岁）</label>
+                <input type="number" id="age" min="40" max="100" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="gender">性别</label>
+                <select id="gender" required>
+                    <option value="">--请选择--</option>
+                    <option value="male">男性</option>
+                    <option value="female">女性</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="height">身高（cm）</label>
+                <input type="number" id="height" min="140" max="200" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="weight">体重（kg）</label>
+                <input type="number" id="weight" min="30" max="150" required>
+                <small>自动计算BMI：<span id="bmi-result" class="bmi-result">0</span></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="sbp">收缩压（mmHg）</label>
+                <input type="number" id="sbp" min="80" max="200" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dbp">舒张压（mmHg）</label>
+                <input type="number" id="dbp" min="50" max="120" required>
+            </div>
+            
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="ht_med"> 正在服用降压药
+                </label>
+            </div>
+            
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="smoker"> 当前或既往吸烟
+                </label>
+            </div>
+            
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="diabetes"> 糖尿病
+                </label>
+            </div>
+            
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="heart_failure"> 心力衰竭
+                </label>
+            </div>
+            
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="mi"> 心肌梗死病史
+                </label>
+            </div>
+            
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="lvh"> 心电图显示左心室肥厚
+                </label>
+            </div>
+            
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="hyperthyroidism"> 甲状腺疾病（尤其甲亢）
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label for="nt_probnp">NT-proBNP（pg/mL，如已知）</label>
+                <input type="number" id="nt_probnp" min="0" placeholder="选填">
+            </div>
+            
+            <button type="button" class="calculate-btn" onclick="calculateRisk()">计算房颤风险</button>
+            
+            <!-- 风险评估结果区域 -->
+            <div id="risk-result" class="risk-result">
+                <div id="risk-level" class="risk-level"></div>
+                <div id="risk-details" style="text-align: center; margin-bottom: 15px;"></div>
+                <div id="recommendation" class="recommendation"></div>
+            </div>
+        </div>
+        
+        <div class="quote">
+            <p>"房颤是可控的卒中源头！</p>
+            <p><strong>早发现一天，多一份平安；</strong></p>
+            <p><strong>早治疗一天，少一场悲剧！"</strong></p>
+            <p style="text-align:right">——中国心血管病权威 葛均波院士</p>
+        </div>
+        
+        <div class="highlight" style="text-align:center; padding:20px; margin-top:30px;">
+            <p><strong>📌 记住：</strong></p>
+            <p style="font-size:18px;"><strong>规律的心跳，是生命最稳的节拍；</strong></p>
+            <p style="font-size:18px;"><strong>及时的筛查，是健康最硬的防线！</strong></p>
+        </div>
+        
+        <div class="footer">
+            <p>本文由中华医学会心血管病学分会权威审核 | 2025年中国房颤日科普行动</p>
+            <p>主办单位：漳州市医院总部心血管内二科</p>
+        </div>
+    </div>
+    
+    <script>
+        // 显示风险评估表单
+        function showRiskAssessment() {
+            const form = document.getElementById('risk-form');
+            form.style.display = 'block';
+            form.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // 自动计算BMI
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value) / 100; // 转换为米
+            const weight = parseFloat(document.getElementById('weight').value);
+            
+            if (height > 0 && weight > 0) {
+                const bmi = (weight / (height * height)).toFixed(1);
+                document.getElementById('bmi-result').textContent = bmi;
+            }
+        }
+        
+        // 监听身高体重变化
+        document.getElementById('height').addEventListener('input', calculateBMI);
+        document.getElementById('weight').addEventListener('input', calculateBMI);
+        
+        // 房颤风险计算函数
+        function calculateRisk() {
+            // 获取表单值
+            const age = parseInt(document.getElementById('age').value);
+            const gender = document.getElementById('gender').value;
+            const bmi = parseFloat(document.getElementById('bmi-result').textContent);
+            const sbp = parseInt(document.getElementById('sbp').value);
+            const dbp = parseInt(document.getElementById('dbp').value);
+            
+            // 检查必填项
+            if (!age || !gender || !sbp || !dbp) {
+                alert('请填写必填信息');
+                return;
+            }
+            
+            // 简单风险计算
+            let riskScore = 0;
+            
+            // 年龄因素
+            if (age >= 65) riskScore += 2;
+            else if (age >= 55) riskScore += 1;
+            
+            // 性别因素
+            if (gender === 'male') riskScore += 1;
+            
+            // BMI因素
+            if (bmi >= 28) riskScore += 1;
+            
+            // 血压因素
+            if (sbp >= 140 || dbp >= 90) riskScore += 1;
+            
+            // 其他风险因素
+            const riskFactors = [
+                'ht_med', 'smoker', 'diabetes', 
+                'heart_failure', 'mi', 'lvh', 'hyperthyroidism'
+            ];
+            
+            riskFactors.forEach(factor => {
+                if (document.getElementById(factor).checked) {
+                    riskScore += 1;
+                }
+            });
+            
+            // 根据分数评估风险等级
+            let riskLevel = '';
+            let recommendation = '';
+            let riskClass = '';
+            
+            if (riskScore <= 2) {
+                riskLevel = '低风险';
+                riskClass = 'risk-low';
+                recommendation = '您的房颤风险较低，继续保持健康生活方式：<br>• 均衡饮食，减少盐分摄入<br>• 每周至少150分钟中等强度运动<br>• 定期监测血压<br>• 建议每2年进行一次心电筛查';
+            } else if (riskScore <= 4) {
+                riskLevel = '中风险';
+                riskClass = 'risk-medium';
+                recommendation = '您的房颤风险中等，需要关注健康管理：<br>• 建议每年进行一次心电筛查<br>• 严格控制血压、血糖<br>• 戒烟限酒，保持健康体重<br>• 可到漳州市医院心血管内二科进行专业评估';
+            } else {
+                riskLevel = '高风险';
+                riskClass = 'risk-high';
+                recommendation = '您的房颤风险较高，建议立即行动：<br>• <strong>强烈建议尽快到漳州市医院心血管内二科进行专业筛查</strong><br>• 地址：<strong>漳州市医院总部院区第二住院楼14楼</strong><br>• 预约电话：<strong>0596-6853441</strong>';
+            }
+            
+            // 显示结果
+            const riskLevelElement = document.getElementById('risk-level');
+            riskLevelElement.textContent = `您的房颤风险评估结果：${riskLevel}`;
+            riskLevelElement.className = `risk-level ${riskClass}`;
+            
+            document.getElementById('risk-details').innerHTML = `风险评分：<strong>${riskScore}/10</strong>`;
+            document.getElementById('recommendation').innerHTML = `<strong>健康建议：</strong><br>${recommendation}`;
+            
+            // 显示结果区域
+            document.getElementById('risk-result').style.display = 'block';
+            
+            // 滚动到结果区域
+            document.getElementById('risk-result').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
